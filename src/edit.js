@@ -11,7 +11,14 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, RichText } from '@wordpress/block-editor';
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+
+const MY_TEMPLATES = [
+	["core/image", {}],
+	["core/heading", {placeholder:"Giveaway Title"}],
+	["core/paragraph", {placeholder: "Giveaway Description"}],
+	["core/button", {placeholder:"Call to Action"}]
+]
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -27,33 +34,14 @@ import './editor.scss';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  *
- * @param {Object} [props]           Properties passed from the editor.
- * @param {string} [props.className] Class name generated for the block.
  *
  * @return {WPElement} Element to render.
  */
 export default function Edit({attributes, setAttributes}) {
 	return (
-		<>
-			<div { ...useBlockProps() }>
-				<RichText
-					tagName="h2"
-					placeholder="Giveaway Title"
-					value={attributes.title}
-					onChange={(title)=>setAttributes({title})}
-					style={{color:attributes.titleColor}}
-				/>
-
-				<RichText
-					tagName="p"
-					placeholder="Giveaway Description"
-					value={attributes.description}
-					onChange={(description)=>setAttributes({description})}
-					style={{color:attributes.descriptionColor}}
-				/>
-			</div>
-		</>
-
+		<div { ...useBlockProps() }>
+			<InnerBlocks template={MY_TEMPLATES} templateLock="insert"/>
+		</div>
 
 	);
 }
