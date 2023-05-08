@@ -34,19 +34,14 @@ import './editor.scss';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  *
- * @param {Object} [props]           Properties passed from the editor.
- * @param {string} [props.className] Class name generated for the block.
  *
  * @return {WPElement} Element to render.
  */
 export default function Edit({attributes, setAttributes}) {
 	return (
-		<>
-			<div { ...useBlockProps() }>
-				<InnerBlocks template={MY_TEMPLATES}/>
-			</div>
-		</>
-
+		<div { ...useBlockProps() }>
+			<InnerBlocks template={MY_TEMPLATES} templateLock="insert"/>
+		</div>
 
 	);
 }
