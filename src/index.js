@@ -27,6 +27,10 @@ import metadata from './block.json';
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 registerBlockType( metadata.name, {
+
+	//TODO: Immediate Reward: Download link/Button
+	//TODO: Enter Giveaway: Store the user's email and actions
+
 	/**
 	 * @see ./edit.js
 	 */

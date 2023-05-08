@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -27,12 +27,33 @@ import './editor.scss';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  *
+ * @param {Object} [props]           Properties passed from the editor.
+ * @param {string} [props.className] Class name generated for the block.
+ *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit({attributes, setAttributes}) {
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Emo Giveaway – hello from the editor!', 'emo-giveaway' ) }
-		</p>
+		<>
+			<div { ...useBlockProps() }>
+				<RichText
+					tagName="h2"
+					placeholder="Giveaway Title"
+					value={attributes.title}
+					onChange={(title)=>setAttributes({title})}
+					style={{color:attributes.titleColor}}
+				/>
+
+				<RichText
+					tagName="p"
+					placeholder="Giveaway Description"
+					value={attributes.description}
+					onChange={(description)=>setAttributes({description})}
+					style={{color:attributes.descriptionColor}}
+				/>
+			</div>
+		</>
+
+
 	);
 }

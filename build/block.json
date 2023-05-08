@@ -3,12 +3,65 @@
   "apiVersion": 2,
   "name": "create-block/emo-giveaway",
   "version": "0.1.0",
-  "title": "Emo Giveaway",
-  "category": "widgets",
-  "icon": "smiley",
-  "description": "Example block scaffolded with Create Block tool.",
+  "title": "Emo Example Giveaway",
+  "category": "common",
+  "icon": "awards",
+  "description": "Giveaway and reward block.",
   "supports": {
     "html": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "source": "html",
+      "selector": "h2"
+    },
+    "titleColor": {
+      "type": "string",
+      "default": "#333"
+    },
+    "description": {
+      "type": "string",
+      "source": "html",
+      "selector": "p"
+    },
+    "descriptionColor": {
+      "type": "string",
+      "default": "#333"
+    },
+    "accounts": {
+      "default": {
+        "twitter": false,
+        "tweet": false,
+        "youtube": false,
+        "facebook": false
+      }
+    },
+    "twitter": {
+      "default": {
+        "text": "Hello twitter",
+        "account": ""
+      }
+    },
+    "tweet": {
+      "default": {
+        "text": "",
+        "message": "",
+        "url": ""
+      }
+    },
+    "youtube": {
+      "default": {
+        "text": "",
+        "url": ""
+      }
+    },
+    "facebook": {
+      "default": {
+        "text": "",
+        "url": ""
+      }
+    }
   },
   "textdomain": "emo-giveaway",
   "editorScript": "file:./index.js",
