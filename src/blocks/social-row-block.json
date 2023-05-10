@@ -1,0 +1,12 @@
+{
+  "name": "create-block/emo-giveaway-social-row",
+  "title": "Social Row",
+  "category": "widget",
+  "icon":"smiley",
+  "parent": ["create-block/emo-giveaway"],
+  "description": "Add a social media row to the Giveaway Block",
+  "textdomain":"emo-giveaway",
+  "support": {
+	"html": false
+  }
+}

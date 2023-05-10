@@ -17,7 +17,7 @@ const MY_TEMPLATES = [
 	["core/image", {}],
 	["core/heading", {placeholder:"Giveaway Title"}],
 	["core/paragraph", {placeholder: "Giveaway Description"}],
-
+	["create-block/emo-giveaway-social-row"],
 	["core/button", {placeholder:"Call to Action"}]
 ]
 

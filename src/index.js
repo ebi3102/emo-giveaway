@@ -41,3 +41,11 @@ registerBlockType( metadata.name, {
 	 */
 	save,
 } );
+
+/**
+ * Child blocks
+ */
+
+import {metadataSocial, name, settings} from "./blocks/social-row";
+
+registerBlockType({name, ...metadataSocial}, settings);
