@@ -17,6 +17,7 @@ const MY_TEMPLATES = [
 	["core/image", {}],
 	["core/heading", {placeholder:"Giveaway Title"}],
 	["core/paragraph", {placeholder: "Giveaway Description"}],
+
 	["core/button", {placeholder:"Call to Action"}]
 ]
 
