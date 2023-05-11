@@ -38,7 +38,7 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit({attributes, setAttributes}) {
+export default function edit() {
 	return (
 		<div { ...useBlockProps() }>
 			<InnerBlocks template={MY_TEMPLATES} templateLock="insert"/>
