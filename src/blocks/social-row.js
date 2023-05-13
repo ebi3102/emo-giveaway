@@ -10,8 +10,8 @@ export {metadataSocial, name};
 
 const TEMPLATE = [
 	["core/columns", {templateLock:"all", width:"30%", verticalAlignment:"center"}, [
-		["core/column", {templateLock:"all"}, [
-			["core/image", {}]
+		["core/column", {templateLock:"all",  width:"30%"}, [
+			["core/image", {sizeSlug: "thumbnail"}]
 		]],
 		["core/column", {templateLock:"all"}, [
 			["core/button"]

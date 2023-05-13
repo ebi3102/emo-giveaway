@@ -41,7 +41,9 @@ import './editor.scss';
 export default function edit() {
 	return (
 		<div { ...useBlockProps() }>
-			<InnerBlocks template={MY_TEMPLATES} templateLock="insert"/>
+			<InnerBlocks template={MY_TEMPLATES}
+						 allowedBlocks={["create-block/emo-giveaway-social-row"]}
+			/>
 		</div>
 
 	);
